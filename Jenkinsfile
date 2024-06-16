@@ -1,6 +1,9 @@
 #!/user/bin/env groovy
 
-@Library('jenkins-shared')_
+library identifier: 'shared-library-repo@master', retriever:modernSCM(
+[$class: 'GitSCMSource',
+remote: 'https://github.com/bondgh0954/shared-library-repo.git',
+credentialsId: 'github-credentials'])_
 pipeline{
   agent any
   tools{
